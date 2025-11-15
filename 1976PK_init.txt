@@ -5,7 +5,7 @@ campaignTrail_temp.election_json = [
         "fields": {
             "year": 1976,
             "summary": "<div style='overflow-y:scroll;height:200px;'>Bleeding.<br><br>The entire dam nation is bleeding. Cut down by decades of hate, political instability and economic pain.<br><br>Nixon resigned in disgrace. Ford got shot dead by some beatnik. Incumbent President Rockefeller is bedridden after another heart attack. The GOP has been bled dry by corruption.<br><br>And like a bolt of Captain Marvels lighting, Elvis arrived. A straight talking washed up movie star with a Southern drawl, the formally famous artist cinched the nomination in a near desolate field following Rockefellers dramatic dropout. He's got to keep the skeletons in the closet, unite a fractured party and deliver a win for the party of Lincoln's toughest election to date. But it can all blow up in his face. The liberal and conservative factions are knawing at the party's sides, both threatening to buck you should something go afowel.<br><br>But the Democrats aren't down for the count. After the McGovern/Carter debacle of '72, they've given up on appealing to anyone leaning right. Nowk they've put all their stock into the growing grassroots movement of leftist Lyndon LaRouche. The<br>demagogic Congress member is vowing to deliver an America that works for everyone, not just the elites. But he has a pretty backwards idea about who is considered an elite. So long as he can keep a handle on his more extreme views, New Left LaRouche can sail in ease to the White House.<br><br>The stage of America's bicentennial is set. And the winner will have America's soul.<br><br>God help us all.</div>",
-            "image_url": "https://www.jetsimon.com/public/static/images/1976-election-photo.jpg",
+            "image_url": "https://i.ibb.co/whqnwPkm/Untitled538-20251115124801.png",
             "winning_electoral_vote_number": 270,
             "advisor_url": "https://www.jetsimon.com/public/static/images/jordan-cheney-1976.jpg",
             "recommended_reading": "<h4 style=\"margin-top: 0.5em;\">1976 Election Books and Biographies</h4><a href=\"http://www.amazon.com/exec/obidos/ASIN/0670454613/amhius20-20\" target=\"_blank\">Jules Witcover - Marathon: The Pursuit of the Presidency, 1972-1976</a></br><a href=\"http://www.amazon.com/exec/obidos/ASIN/1590843630/amhius20-20\" target=\"_blank\">The Election of 1976 and the Administration of Jimmy Carter</a></br><a href=\"http://www.amazon.com/exec/obidos/ASIN/B007V955ZS/amhius20-20\" target=\"_blank\">Craig Shirley - Reagan's Revolution: The Untold Story of the Campaign That Started It All</a></br><a href=\"http://www.amazon.com/exec/obidos/ASIN/B001KBY7YI/amhius20-20\" target=\"_blank\">Douglas Brinkley - Gerald R. Ford</a></br><a href=\"http://www.amazon.com/exec/obidos/ASIN/0805089578/amhius20-20\" target=\"_blank\">Julian E. Zelizer - Jimmy Carter</a>",
@@ -51,7 +51,7 @@ campaignTrail_temp.candidate_json = [
             "party": "Republican",
             "state": "tennessee",
             "priority": 2,
-            "description": "<p>Gerald Ford assumed the Presidency on August 9, 1974, after the resignation of Richard Nixon. His pardon of Nixon is deeply unpopular and is feeding the sentiment for an outsider to assume office. Inflation and unemployment have both weighed on Ford's popularity. On the other hand, Ford enjoys the stature of a President and has negotiated with many foreign leaders. He starts the campaign in second place, and must make up ground quickly while keeping his party united.</p>",
+            "description": "<div style='overflow-y:scroll;height:200px;'>You felt your temperature arising. Those feel good pills Dr. Nic got you on hadn't sat well with what little you'd been eating over the last few days. Your mind wanders, focused on the feeling of signing this same gospel song back oh so many years ago at the black majority church of your childhood.<br><br>You miss a step.<br><br>You tumble.<br><br>You reach the end of the stairs.<br><br>The ambulance shakes, rattles and rolls as it speeds to the hospital. All the while you're talking to Mama, Priscilla and Lisa Marie. Oh God, why did you have to take those three? Why'd you make them angels?<br><br>You talk, for what feels like an eternity. Your whole life laid bare. You see dark flashes of some future Vegas residency. Propped up by the Colonel and hangers on. A fat, drugged up joke. One who didn't even get to see middle age.<br><br>They tell you to avoid this. To do anything else. Be anyone else. Just not this.<br><br>As the doctors pull you back from the brink, you spook them by bolting up. Like Frankenstein's monster, you've been given new life. But this is no horror picture show.<br><br>You are Elvis Presley, and by Christ you'll win in 1976...</div>",
             "color_hex": "#FF0000",
             "secondary_color_hex": "#FFA0A0",
             "is_active": 1,
@@ -151,7 +151,7 @@ campaignTrail_temp.candidate_json = [
             "electoral_victory_message": "''",
             "electoral_loss_message": "''",
             "no_electoral_majority_message": "''",
-            "description_as_running_mate": "<p>Bob Dole is a well-respected, conservative Senator from Kansas. He could unite the party after a divisive primary fight -- Ronald Reagan has singled Dole out as a good choice for running mate. He is popular in the farm states and could help consolidate support in the Plains and Midwest. He is also known to have loose lips on the campaign trail, and does not hold back in his attacks.</p>",
+            "description_as_running_mate": "Involved.<br><br>That's the word Connally used to describe his career. He was in the same car as Kennedy in Dallas. He was a top student of LBJ. He was on the short list to be VP before Watergate broke.<br><br>He knew Presley only chose him because of his connection. His bi-partisan appeal to older voters, on both sides of the aisle, who felt disenfranchised with the Democrats sharp left turn. And that older crowd appeal would have to work, considering his running mate would barely be 42 if he won.<br><br>Now here he was, VP candidate again for the Republicans in 1976. Not bad for being a Democrat less than five years",
             "candidate_score": 0,
             "running_mate": true
         }
@@ -239,7 +239,7 @@ campaignTrail_temp.running_mate_json = [
     }
 ]
 
-campaignTrail_temp.credits = "The President King Team"
+campaignTrail_temp.credits = "MuskieNotMusk and RosemaryThe"
 
 campaignTrail_temp.global_parameter_json = [
     {
@@ -306,12 +306,15 @@ jet_data = {
     "innerWindowColor": "#c5001e",
     "bannerImageUrl": "https://i.ibb.co/Q3rHwSMG/Untitled530-20251114181346.png",
     "backgroundImageUrl": "https://i.ibb.co/prkJWn7v/Untitled537-20251115104745.png",
-    "endingTextColor": "#ffffff",
-    "customQuote": ""
+    "endingTextColor": "#E4000F",
+    "customQuote": "",
+    "gameTitle": "THE CAMPAIGN TRAIL"
 }
 
 //#startcode
 
+
+corrr = '\n              <h2 style="font-style: normal; color:#E4000F;"><b>THE CAMPAIGN TRAIL</b></h2>\n            ';
 
 
 nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#000000";
@@ -320,7 +323,7 @@ nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#c5001e";
 
 document.getElementsByClassName("game_header")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
 
-$("#game_window")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
+$("#game_window")[0].style.background = "#880c1e url('https://i.ibb.co/X9R9HCz/Untitled535-20251115103658.png') repeat";
 
 $(".container")[0].style.backgroundColor = "#940015";
 
@@ -329,5 +332,67 @@ document.getElementById("header").src = "https://i.ibb.co/Q3rHwSMG/Untitled530-2
 document.body.background = "https://i.ibb.co/prkJWn7v/Untitled537-20251115104745.png";
 
 document.head.innerHTML += "<style>#results_container {color:#ffffff;} .inner_window_w_desc {background-color:#c5001e!important;}</style>";
+
+const style_overwrite = document.createElement("style");
+style_overwrite.innerHTML = 
+        `a {
+            color: #79b1db;
+        }
+        #election_image img {
+            width: 348px;
+            height: 210px;
+            margin-left: -0.95em;
+            margin-top: -0.85em;
+        }
+        `;
+document.head.appendChild(style_overwrite);
+
+var changeGameDisp = (hide) => {
+  disp = "";
+  if (hide) {
+    disp = "none";
+  }
+  document.getElementsByClassName("inner_window_w_desc")[0].style.display = disp
+};
+
+e.creditsPage = () => {
+  credits_html = `
+
+  `
+  changeGameDisp(true);
+  var spacer = document.createElement("amongusspacerthisisntarealelement");
+  spacer.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  document
+    .getElementsByClassName("inner_window_w_desc")[0]
+    .children[1].appendChild(spacer);
+    changeGameDisp(true);
+    var menuHeader = document.createElement("div");
+    menuHeader.classList.add("inner_window_front");
+    menuHeader.innerHTML = `<h1 style='margin-top: 0.4em;'><font id='Gothic' size='6' color='#9f2898'><i>THIS TIME, WITH HART</i> was made possible by:</font></h1>`;
+    menuHeader.id = "SOTUheader";
+    menuHeader.style = "height: 50px;background-color:#212121";
+    var newMenu = document.createElement("div");
+    newMenu.classList.add("inner_window_front");
+    newMenu.id = "SOTUmenu";
+    newMenu.style = `height:303px;background-color:#212121;color:white;overflow-y: scroll;`;
+
+    newMenu.innerHTML = credits_html;
+    let z = document.getElementById("game_window");
+    var backButton = document.createElement("button");
+    backButton.style =
+      "position: relative; bottom: -4px; left: -392px; width: 130px; height: 50px;font-size:20px;padding-top:5px;padding-left:8px";
+    backButton.id = "backSOTUBtn";
+    backButton.innerHTML = `<b>BACK</b>`;
+    backButton.onclick = function () {
+      document.getElementById("SOTUheader").remove();
+      document.getElementById("SOTUmenu").remove();
+      document.getElementById("backSOTUBtn").remove();
+      changeGameDisp(false);
+    };
+    z.appendChild(menuHeader);
+    z.appendChild(newMenu);
+    z.appendChild(backButton);
+
+}
 
 //#endcode
