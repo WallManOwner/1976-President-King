@@ -4,7 +4,7 @@ campaignTrail_temp.election_json = [
         "pk": 10,
         "fields": {
             "year": 1976,
-            "summary": "<div style='overflow-y:scroll;height:200px;'>Bleeding.<br><br>The entire dam nation is bleeding. Cut down by decades of hate, political instability and economic pain.<br><br>Nixon resigned in disgrace. Ford got shot dead by some beatnik. Incumbent President Rockefeller is bedridden after another heart attack. The GOP has been bled dry by corruption.<br><br>And like a bolt of Captain Marvels lighting, Elvis arrived. A straight talking washed up movie star with a Southern drawl, the formally famous artist cinched the nomination in a near desolate field following Rockefellers dramatic dropout. He's got to keep the skeletons in the closet, unite a fractured party and deliver a win for the party of Lincoln's toughest election to date. But it can all blow up in his face. The liberal and conservative factions are knawing at the party's sides, both threatening to buck you should something go afowel.<br><br>But the Democrats aren't down for the count. After the McGovern/Carter debacle of '72, they've given up on appealing to anyone leaning right. Nowk they've put all their stock into the growing grassroots movement of leftist Lyndon LaRouche. The<br>demagogic Congress member is vowing to deliver an America that works for everyone, not just the elites. But he has a pretty backwards idea about who is considered an elite. So long as he can keep a handle on his more extreme views, New Left LaRouche can sail in ease to the White House.<br><br>The stage of America's bicentennial is set. And the winner will have America's soul.<br><br>God help us all.</div>",
+            "summary": "<div style='overflow-y:scroll;height:200px;'><b>Bleeding.</b><br><br>The entire dam nation is bleeding. Cut down by decades of hate, political instability and economic pain.<br><br>Nixon resigned in disgrace. Ford got shot dead by some beatnik. Incumbent President Rockefeller is bedridden after another heart attack. The GOP has been bled dry by corruption.<br><br>And like a bolt of Captain Marvels lighting, Elvis arrived. A straight talking washed up movie star with a Southern drawl, the formally famous artist cinched the nomination in a near desolate field following Rockefellers dramatic dropout. He's got to keep the skeletons in the closet, unite a fractured party and deliver a win for the party of Lincoln's toughest election to date. But it can all blow up in his face. The liberal and conservative factions are knawing at the party's sides, both threatening to buck you should something go afowel.<br><br>But the Democrats aren't down for the count. After the McGovern/Carter debacle of '72, they've given up on appealing to anyone leaning right. Nowk they've put all their stock into the growing grassroots movement of leftist Lyndon LaRouche. The<br>demagogic Congress member is vowing to deliver an America that works for everyone, not just the elites. But he has a pretty backwards idea about who is considered an elite. So long as he can keep a handle on his more extreme views, New Left LaRouche can sail in ease to the White House.<br><br>The stage of America's bicentennial is set. And the winner will have America's soul.<br><br>God help us all.</div>",
             "image_url": "https://i.ibb.co/whqnwPkm/Untitled538-20251115124801.png",
             "winning_electoral_vote_number": 270,
             "advisor_url": "https://www.jetsimon.com/public/static/images/jordan-cheney-1976.jpg",
@@ -239,7 +239,7 @@ campaignTrail_temp.running_mate_json = [
     }
 ]
 
-campaignTrail_temp.credits = "MuskieNotMusk and RosemaryThe"
+campaignTrail_temp.credits = "MuskieNotMusk (Creator of Timeline, and Lead Writer) and RosemaryThe (Coder and Writer)<p>Music Player from 2024: No More MAGA</p><p>Larger Election Image from 1988: This Time With Hart"
 
 campaignTrail_temp.global_parameter_json = [
     {
@@ -394,5 +394,327 @@ e.creditsPage = () => {
     z.appendChild(backButton);
 
 }
+campaignTrail_temp.musicOn = true
+
+// -- Enlarge the sliders horizontally ---------------------------------
+;(function() {
+  const css = `
+    /* make both volume & progress bars longer */
+    #volume_slider,
+    #progress_slider {
+      width: 400px !important;
+    }
+  `;
+  const style = document.createElement("style");
+  style.textContent = css;
+  document.head.appendChild(style);
+})();
+
+// -- Enlarge track title & artist text --------------------------------
+;(function() {
+  const css = `
+    /* make the main title bigger */
+    #track_name {
+      font-size: 28px !important;
+      line-height: 1.2 !important;
+    }
+    /* make the artist name bigger */
+    #artist_name {
+      font-size: 20px !important;
+      line-height: 1.2 !important;
+    }
+  `;
+  const style = document.createElement("style");
+  style.textContent = css;
+  document.head.appendChild(style);
+})();
+
+// -- Make the Volume/Progress labels white ----------------------------
+;(function() {
+  const css = `
+    /* target the labels for your sliders */
+    label[for="volume_slider"],
+    label[for="progress_slider"] {
+      color: #fff !important;
+    }
+  `;
+  const style = document.createElement("style");
+  style.textContent = css;
+  document.head.appendChild(style);
+})();
+
+// -- Hide original controls --------------------------------------------
+$("#music_player")[0].children[0].style.display = "none";
+$("#music_player")[0].children[1].style.display = "none";
+document.getElementById("modLoadReveal").style.display = "none";
+document.getElementById("modloaddiv").style.display = "none";
+
+// -- Style the container like your mockup ------------------------------
+const musicBox = document.getElementById("music_player");
+musicBox.style.cssText = `
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #161616;
+  border: 5px solid #FFFFFF;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+`;
+
+// -- Utility -----------------------------------------------------------
+function clamp(idx, max, min = 0) {
+  return idx > max ? min : idx < min ? max : idx;
+}
+
+// -- Game state bootstrap ----------------------------------------------
+e = campaignTrail_temp;
+e.selectedSoundtrack = 0;
+
+// -- Build the custom player -------------------------------------------
+function newMusicPlayer() {
+  // remove old UI
+  const old = document.getElementById("custom_player_wrapper");
+  if (old) old.remove();
+
+  const audio = document.getElementById("campaigntrailmusic");
+  audio.preload = "metadata";
+
+  // flex wrapper: small gap so text sits right next to image
+  const wrapper = document.createElement("div");
+  wrapper.id = "custom_player_wrapper";
+  wrapper.style.cssText = `
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  `;
+
+  // 1) Album cover (left)
+  const cover = document.createElement("div");
+  cover.id = "album_cover";
+  cover.style.cssText = `
+    width: 150px;
+    height: 150px;
+    background: #ddd;
+    border: 3px solid #FFFFFF;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+  `;
+
+  // 2) Details column (right of cover), centered
+  const details = document.createElement("div");
+  details.style.cssText = `
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  `;
+
+  // 2a) Track info (now centered)
+  const info = document.createElement("div");
+  info.style.cssText = "margin-bottom: 10px; text-align: center; width: 100%;";
+  const titleEl = document.createElement("div");
+  titleEl.id = "track_name";
+  titleEl.style.cssText = "font-size:20px; color:#fff; font-weight:bold;";
+  const artistEl = document.createElement("div");
+  artistEl.id = "artist_name";
+  artistEl.style.cssText = "font-size:14px; color:#fff;";
+  info.append(titleEl, artistEl);
+
+  // 2b) Sliders
+  const sliders = document.createElement("div");
+  sliders.style.cssText = "display:flex; flex-direction:column; gap:8px; margin-bottom:10px;";
+
+  // volume
+  const volRow = document.createElement("div");
+  volRow.style.cssText = "display:flex; align-items:center; gap:10px;";
+  const volLabel = document.createElement("label");
+  volLabel.htmlFor = "volume_slider";
+  volLabel.innerText = "Volume:";
+  volLabel.style.width = "70px";
+  const volumeSlider = document.createElement("input");
+  volumeSlider.id = "volume_slider";
+  volumeSlider.type = "range";
+  volumeSlider.min = 0;
+  volumeSlider.max = 1;
+  volumeSlider.step = 0.01;
+  volumeSlider.value = 0.5;
+  volumeSlider.style.flex = "1";  // size controlled by injected CSS
+  volRow.append(volLabel, volumeSlider);
+
+  // progress
+  const progRow = document.createElement("div");
+  progRow.style.cssText = "display:flex; align-items:center; gap:10px;";
+  const progLabel = document.createElement("label");
+  progLabel.htmlFor = "progress_slider";
+  progLabel.innerText = "Progress:";
+  progLabel.style.width = "70px";
+  const progressSlider = document.createElement("input");
+  progressSlider.id = "progress_slider";
+  progressSlider.type = "range";
+  progressSlider.min = 0;
+  progressSlider.max = 1;
+  progressSlider.step = 0.001;
+  progressSlider.value = 0;
+  progressSlider.style.flex = "1"; // size controlled by injected CSS
+  progRow.append(progLabel, progressSlider);
+
+  sliders.append(volRow, progRow);
+
+  // 2c) Controls row
+  const controlsWrap = document.createElement("div");
+  controlsWrap.style.cssText = "display:flex; align-items:center;";
+  const prevBtn = document.createElement("button");
+  prevBtn.id = "prev_btn";
+  prevBtn.innerText = "Prev";
+  prevBtn.style.cssText = "padding:5px 10px; margin-right:5px; font-size:16px; cursor:pointer;";
+  const playBtn = document.createElement("button");
+  playBtn.id = "play_pause_btn";
+  playBtn.innerText = "Play";
+  playBtn.style.cssText = "padding:5px 10px; margin-right:5px; font-size:16px; cursor:pointer;";
+  const nextBtn = document.createElement("button");
+  nextBtn.id = "next_btn";
+  nextBtn.innerText = "Next";
+  nextBtn.style.cssText = "padding:5px 10px; margin-right:5px; font-size:16px; cursor:pointer;";
+  const dropdown = document.createElement("select");
+  dropdown.id = "track_dropdown";
+  dropdown.style.cssText = "padding:5px; font-size:14px; margin-left:10px; cursor:pointer;";
+  controlsWrap.append(prevBtn, playBtn, nextBtn, dropdown);
+
+  // assemble
+  details.append(info, sliders, controlsWrap);
+  wrapper.append(cover, details);
+  musicBox.insertBefore(wrapper, audio);
+
+  // populate & hook up
+  const tracks = soundtracks[e.selectedSoundtrack].tracklist;
+  tracks.forEach((t, i) => {
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.textContent = `${t.name} - ${t.artist}`;
+    dropdown.append(opt);
+  });
+
+  let currentIndex = 0;
+  function loadTrack(i) {
+    const t = tracks[i];
+    audio.src = t.url;
+    cover.style.backgroundImage = `url('${t.cover}')`;
+    titleEl.innerText = t.name;
+    artistEl.innerText = t.artist;
+    dropdown.value = i;
+    audio.currentTime = 0;
+    audio.loop = false;
+    audio.play();
+    playBtn.innerText = "Pause";
+    currentIndex = i;
+  }
+  loadTrack(0);
+
+  playBtn.onclick = () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.innerText = "Pause";
+    } else {
+      audio.pause();
+      playBtn.innerText = "Play";
+    }
+  };
+  prevBtn.onclick = () => loadTrack(clamp(currentIndex - 1, tracks.length - 1));
+  nextBtn.onclick = () => loadTrack(clamp(currentIndex + 1, tracks.length - 1));
+  dropdown.onchange = e => loadTrack(+e.target.value);
+  volumeSlider.oninput = e => (audio.volume = +e.target.value);
+  progressSlider.oninput = e => {
+    if (audio.duration) audio.currentTime = +e.target.value * audio.duration;
+  };
+  audio.ontimeupdate = () => {
+    if (audio.duration) progressSlider.value = audio.currentTime / audio.duration;
+  };
+  audio.onended = () => nextBtn.click();
+}
+
+// -- Your playlists ----------------------------------------------------
+var soundtracks = [
+  {
+    name: "New Age for America",
+    tracklist: [
+      {
+        name: "Band on the Run",
+        artist: "Paul McCartney and Wings",
+        url:  "https://audio.jukehost.co.uk/WnUOlBu7wblrbE2t7xrWEmga8wxvnyBU",
+        cover: "https://upload.wikimedia.org/wikipedia/en/f/f4/Paul_McCartney_%26_Wings-Band_on_the_Run_album_cover.jpg"
+      },
+      {
+        name: "Float On",
+        artist: "Modest Mouse",
+        url:  "https://audio.jukehost.co.uk/xBWzqPqn5w1sYDFwDBdRXzyrXzTRDSRt",
+        cover: "https://upload.wikimedia.org/wikipedia/en/e/e4/Modest_Mouse-Float_on-_album_cover.jpg"
+      },
+      {
+        name: "Without Me",
+        artist: "Eminem",
+        url:  "https://audio.jukehost.co.uk/VZ3h9wEqzJvMLpCJVVg6Cd8Rredx2n32",
+        cover: "https://upload.wikimedia.org/wikipedia/en/a/ad/Eminem_-_Without_Me_CD_cover.jpg"
+      },
+      {
+        name: "Somebody Told Me",
+        artist: "The Killers",
+        url:  "https://audio.jukehost.co.uk/GV8Wk2nHxsdHIBzv0qGI1x7dn8AlP6hc",
+        cover: "https://upload.wikimedia.org/wikipedia/en/f/f5/Somebody-Told-Me.jpg"
+      },
+      {
+        name: "Touch the Sky",
+        artist: "Kanye West",
+        url:  "https://audio.jukehost.co.uk/CEecRaPUPQ1vgwAYsIhMRTBQ4qq4dmIF",
+        cover: "https://upload.wikimedia.org/wikipedia/en/5/56/Kanyewest_touchthesky.jpg"
+      },
+      {
+        name: "Toxic",
+        artist: "Britney Spears",
+        url:  "https://audio.jukehost.co.uk/jNs50cdopNPtwODL9d03PdI86RD035OO",
+        cover: "https://upload.wikimedia.org/wikipedia/en/2/21/Britney_Spears_Toxic.png"
+      },
+      {
+        name: "Hey Ya!",
+        artist: "OutKast",
+        url:  "https://audio.jukehost.co.uk/q6KIYkrSv3U2ztKRABuasRi5CTgY6OLk",
+        cover: "https://upload.wikimedia.org/wikipedia/en/d/d8/Hey_Ya_single_cover.png"
+      },
+      {
+        name: "Crazy in Love",
+        artist: "Beyonce ft. Jay-Z",
+        url:  "https://audio.jukehost.co.uk/fldDyOS48lzKsTrxNOJW4WK87slysxep",
+        cover: "https://upload.wikimedia.org/wikipedia/en/3/30/Beyonce_-_Crazy_in_Love_%28single%29.png"
+      },
+      {
+        name: "Let's Get It Started",
+        artist: "The Black Eyed Peas",
+        url:  "https://audio.jukehost.co.uk/AF9EOhX8IVkcQrpm0esKn6BHnm3ntLHk",
+        cover: "https://upload.wikimedia.org/wikipedia/en/9/9f/LetsGetItStarted.jpg"
+      },
+      {
+        name: "Take Me Out",
+        artist: "Franz Ferdinand",
+        url:  "https://audio.jukehost.co.uk/OxTIUsaWHysTWKkpIad4YkqIrLigrrEj",
+        cover: "https://upload.wikimedia.org/wikipedia/en/5/52/Franz_Ferdinand_-_Take_Me_Out.jpg"
+      },
+      {
+        name: "Island in the Sun",
+        artist: "Weezer",
+        url:  "https://audio.jukehost.co.uk/ND1w5K5F3lHGICbA9MsJgHFTU8gTJPVZ",
+        cover: "https://upload.wikimedia.org/wikipedia/en/1/1d/Island_in_the_Sun_by_Weezer_Australian_single.png"
+      }
+    ]
+  }
+];
+
+// -- Launch it ---------------------------------------------------------
+newMusicPlayer();
+
 
 //#endcode
