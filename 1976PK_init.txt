@@ -456,7 +456,7 @@ musicBox.style.cssText = `
   align-items: center;
   gap: 20px;
   padding: 20px;
-  background: #161616;
+  background: #880c1e;
   border: 5px solid #FFFFFF;
   border-radius: 10px;
   max-width: 900px;
@@ -644,10 +644,10 @@ var soundtracks = [
     name: "New Age for America",
     tracklist: [
       {
-        name: "Band on the Run",
-        artist: "Paul McCartney and Wings",
-        url:  "https://audio.jukehost.co.uk/WnUOlBu7wblrbE2t7xrWEmga8wxvnyBU",
-        cover: "https://upload.wikimedia.org/wikipedia/en/f/f4/Paul_McCartney_%26_Wings-Band_on_the_Run_album_cover.jpg"
+        name: "Burning Love",
+        artist: "Elvis Presley",
+        url:  "https://audio.jukehost.co.uk/CjXjDUMKGADDtqDqNISPGfLCVT0lMeYw",
+        cover: "https://i.ibb.co/7N8bNMm6/IMG-2395.jpg"
       },
       {
         name: "Float On",
