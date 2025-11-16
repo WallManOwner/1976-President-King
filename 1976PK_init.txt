@@ -314,7 +314,7 @@ jet_data = {
 //#startcode
 
 
-corrr = '\n              <h2 style="font-style: normal; color:#E4000F;"><b>THE CAMPAIGN TRAIL</b></h2>\n            ';
+corrr = '\n              <h2 style="font-style: normal; color:#E4000F;"><b><b>THE CAMPAIGN TRAIL</b></b></h2>\n            ';
 
 
 nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#000000";
@@ -650,21 +650,21 @@ var soundtracks = [
         cover: "https://i.ibb.co/7N8bNMm6/IMG-2395.jpg"
       },
       {
-        name: "Float On",
-        artist: "Modest Mouse",
-        url:  "https://audio.jukehost.co.uk/xBWzqPqn5w1sYDFwDBdRXzyrXzTRDSRt",
-        cover: "https://upload.wikimedia.org/wikipedia/en/e/e4/Modest_Mouse-Float_on-_album_cover.jpg"
+        name: "Trouble",
+        artist: "Elvis Presley",
+        url:  "https://audio.jukehost.co.uk/YiISJyOJMed6KA8eVlYfapUEKlN3ZUt4",
+        cover: "https://i.ibb.co/WNwPrVKD/IMG-2396.jpg"
       },
       {
-        name: "Without Me",
-        artist: "Eminem",
-        url:  "https://audio.jukehost.co.uk/VZ3h9wEqzJvMLpCJVVg6Cd8Rredx2n32",
-        cover: "https://upload.wikimedia.org/wikipedia/en/a/ad/Eminem_-_Without_Me_CD_cover.jpg"
+        name: "It's Now Or Never",
+        artist: "Elvis Presley",
+        url:  "https://audio.jukehost.co.uk/nlNSkV2j0o3RstMLJra7G6TmQh5wQung",
+        cover: "https://i.ibb.co/0RrQ7v4Y/IMG-2397.jpg"
       },
       {
         name: "Somebody Told Me",
-        artist: "The Killers",
-        url:  "https://audio.jukehost.co.uk/GV8Wk2nHxsdHIBzv0qGI1x7dn8AlP6hc",
+        artist: "Elvis Presley",
+        url:  "https://audio.jukehost.co.uk/Mjar91RZvL0yMwH3mFUyIDuqh5GoOh4f",
         cover: "https://upload.wikimedia.org/wikipedia/en/f/f5/Somebody-Told-Me.jpg"
       },
       {
